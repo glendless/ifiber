@@ -1,0 +1,81 @@
+{
+  "main": [
+    {
+      "name": "Beranda",
+      "url": "/"
+    },
+    {
+      "name": "Tentang Kami",
+      "url": "/about"
+    },
+    {
+      "name": "Fitur",
+      "url": "/features"
+    },
+    {
+      "name": "Panduan",
+      "url": "/how-it-works"
+    },
+    {
+      "name": "Pages",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Career",
+          "url": "/career"
+        },
+
+        {
+          "name": "Integrations",
+          "url": "/integrations"
+        },
+
+        {
+          "name": "Pricing",
+          "url": "/pricing"
+        },
+        {
+          "name": "Sign In",
+          "url": "/signin"
+        },
+
+        {
+          "name": "Elements",
+          "url": "/elements"
+        },
+        {
+          "name": "Changelog",
+          "url": "/changelog"
+        },
+        {
+          "name": "Terms And Conditions",
+          "url": "/terms-and-conditions"
+        }
+      ]
+    },
+    {
+      "name": "Kontak",
+      "url": "/contact"
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
+      "name": "Elements",
+      "url": "/elements"
+    },
+    {
+      "name": "Changelog",
+      "url": "/changelog"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+b,
+strong {
+  @apply font-semibold;
+}
+code {
+  @apply after:border-none;
+}
+
+.shadow {
+  box-shadow: 0px 10px 45px rgba(0, 0, 0, 0.05);
+
+  &-lg {
+    box-shadow: 0px 15px 34px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.bg-gradient-to-tl {
+  background-image: linear-gradient(184.78deg, #5D21FF 7.64%, #703dfd 120.07%);
+}
+
+.bg-gradient {
+  background-image: linear-gradient(184.78deg, #FF5E20 7.64%, #FF7E29 120.07%);
+}

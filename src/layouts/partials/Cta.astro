@@ -1,0 +1,37 @@
+---
+import config from "@config/config.json";
+
+const {
+  call_to_action: {
+    title,
+    description,
+    button: { label, link },
+  },
+} = config;
+---
+
+<section class="px-5 py-20 xl:py-[120px]">
+  <div class="container">
+    <div
+      class="bg-secondary row justify-center rounded-[12px] px-[20px] pb-[75px] pt-16"
+    >
+      <div class="lg:col-11">
+        <div class="row flex items-center justify-center text-center">
+          <div class="lg:col-7">
+            <h1 class="h1 text-white">{title}</h1>
+            <div class="mt-8 lg:mt-5">
+              <p class="text-white tracking-wider">
+                {description}
+              </p>
+              <a class="btn btn-black mt-8" href={link}>{label}</a>
+            </div>
+          </div>
+          <!-- <div class="mt-8 lg:col-1 lg:mt-0">
+            <a class="btn btn-black mt-8" href={link}>{label}</a>
+          </div> -->
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

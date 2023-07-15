@@ -1,0 +1,154 @@
+---
+import { Image } from "@astrojs/image/components";
+import PageHeader from "@components/PageHeader.astro";
+import config from "@config/config.json";
+import Base from "@layouts/Base.astro";
+import { getEntryBySlug } from "astro:content";
+
+const entry = await getEntryBySlug("contact", "index");
+const { contact_form_action } = config.params;
+const contact = entry.data;
+const page_data = {
+  ...contact,
+  content: contact.body,
+};
+---
+
+<Base
+  title={contact.title}
+  meta_title={contact.meta_title}
+  description={contact.description}
+  image={contact.image}
+>
+  <section class="page-hero pb-6 pt-16">
+    <div class="container"><PageHeader page_data={page_data} /></div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="mb-10 text-center md:col-6 md:order-2 md:mb-0 md:pt-9">
+          <div class="contact-img relative inline-flex pb-5 pl-5">
+            <Image
+              src="/images/contact-ill.jpg"
+              height={544}
+              width={500}
+              alt=""
+            />
+            <!-- <Image
+              class="absolute bottom-0 left-0 -z-[1] h-14 w-14"
+              src="/images/shape-2.png"
+              alt=""
+              height={56}
+              width={56}
+            /> -->
+          </div>
+        </div>
+        <div class="md:col-6 md:order-1">
+          <form
+            class="lg:max-w-[484px]"
+            action={contact_form_action}
+            method="POST"
+          >
+            <div class="form-group mb-5">
+              <label class="form-label" for="name">Nama Lengkap <span class="text-red-600">*</span></label>
+              <input
+                class="form-control"
+                type="text"
+                id="name"
+                placeholder="Satria Wardana"
+              />
+            </div>
+
+            <div class="form-group mb-5">
+              <label class="form-label" for="idnumber">NIK KTP <span class="text-red-600">*</span></label>
+              <input
+                class="form-control"
+                type="text"
+                id="idnumber"
+                placeholder="31731234567890"
+              />
+            </div>
+
+            <div class="form-group mb-5">
+              <label class="form-label" for="eamil">Email Pribadi <span class="text-red-600">*</span></label>
+              <input
+                class="form-control"
+                type="text"
+                id="email"
+                placeholder="satria@email.com"
+              />
+            </div>
+
+            <div class="form-group mb-5">
+              <label class="form-label" for="phone">No Handphone <span class="text-red-600">*</span></label>
+              <input
+                class="form-control"
+                type="text"
+                id="phone"
+                placeholder="08123456789"
+              />
+            </div>
+
+            <div class="form-group mb-5">
+              <label class="form-label" for="address">Alamat Lengkap <span class="text-red-600">*</span></label>
+              <input
+                class="form-control h-[150px]"
+                type="text"
+                id="address"
+                placeholder="Perumahan Inkopad Blok A1 RT 007/014 No. 8"
+              />
+            </div>
+
+            <div class="form-group mb-5">
+              <label class="form-label" for="kelurahan">Kelurahan</label>
+              <input
+                class="form-control"
+                type="text"
+                id="kelurahan"
+                placeholder="Kalisuren"
+              />
+            </div>
+
+            <div class="form-group mb-5">
+              <label class="form-label" for="kecamatan">Kecamatan</label>
+              <input
+                class="form-control"
+                type="text"
+                id="kecamatan"
+                placeholder="Tajurhalang"
+              />
+            </div>
+
+            <div class="form-group mb-5">
+              <label class="form-label" for="message">Kartu Tanda Penduduk <span class="text-red-600">*</span></label>
+              <input type="file" class="block w-full text-sm 
+              file:mr-4 file:py-2 file:px-4
+              file:rounded file:border-0
+              file:text-sm file:font-semibold
+              file:bg-violet-100
+              hover:file:bg-violet-200
+            "/>
+            </div>
+
+            <div class="form-group mb-5">
+              <label class="form-label" for="reason">Paket Berlangganan <span class="text-red-600">*</span></label>
+              <select name="reason" id="reason" class="form-select" required>
+                <option value="">Pilih Paket Internet</option>
+                <option value="ifiber-bronze">iFiber Bronze</option>
+                <option value="ifiber-silver">iFiber Silver</option>
+                <option value="ifiber-gold">iFiber Gold</option>
+              </select>
+            </div>
+            
+            <input
+              class="btn btn-secondary block w-full"
+              type="submit"
+              value="Send Message"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

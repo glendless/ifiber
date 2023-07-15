@@ -1,0 +1,48 @@
+---
+import { markdownify } from "@lib/utils/textConverter";
+import { Image } from "@astrojs/image/components";
+const { banner } = Astro.props;
+const { title, button, image, content } = banner;
+---
+
+<section class="section banner relative bg-gradient text-white">
+  <div class="container">
+    <div class="row items-center justify-center">
+      <div class="lg:col-6">
+        <h1
+          class="banner-title text-white font-bold"
+          set:html={markdownify(title)}
+        />
+
+        <p class="mt-6 text-white text-md" set:html={markdownify(content)} />
+
+        {
+          button.enable && (
+            
+            <a class="btn btn-black font-bold mt-8" href={button.link}>
+              {button.label}
+            </a>
+            
+          )
+        }
+      </div>
+      <div class="lg:col-6 flex justify-center">
+        <Image
+          class="w-full max-w-[80%] object-fit"
+          alt="banner"
+          src={image}
+          width={480}
+          height={480}
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- <Image
+    class="banner-shape absolute -top-28 right-0 -z-[1] w-full max-w-[20%]"
+    alt="banner"
+    src="/images/svghub-006.svg"
+    width={480}
+    height={480}
+  /> -->
+</section>

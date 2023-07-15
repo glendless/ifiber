@@ -1,0 +1,49 @@
+{
+  "site": {
+    "title": "iFiber",
+    "base_url": "https://pinwheel-astro.vercel.app",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/icon-ifiber.png",
+    "logo": "/images/logo-white.png",
+    "logo_width": "147",
+    "logo_height": "50",
+    "logo_text": "iFiber"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 100,
+    "blog_folder": "blog"
+  },
+
+  "call_to_action": {
+    "title": "Gratis Pemasangan!",
+    "description": "Mulai Nikmati Koneksi Internet Cepat bersama iFiber!",
+    "button": {
+      "label": "Berlangganan",
+      "link": "/pricing"
+    }
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "themefisher-template",
+    "settings": {}
+  },
+
+  "params": {
+    "footer_description": "Koneksi Internet Cepat untuk Kebutuhan Anda.",
+    "email": "info@ifibernet.id",
+    "location": "Perum. Inkopad Blok D 22 No. 9, Tajurhalang, Kab. Bogor 16320",
+    "phone": "0251-3101500",
+    "contact_form_action": "#",
+    "copyright": "Copyright © 2023 by iFiber"
+  },
+
+  "metadata": {
+    "meta_author": "Themefisher",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "pinwheel astro"
+  }
+}
